@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Loja HS Refrigeração: compre ar-condicionados e serviços de climatização em Curitiba com qualidade e garantia.">
+  <title>Loja | HS Refrigeração</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/loja.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="HS Refrigeração">
+      </a>
+       <button class="menu-toggle">☰</button>
+
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="planos.html">Planos</a>
+        <a href="loja.html" class="active">Loja</a>
+        <a href="contato.html" class="btn">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero interno -->
+  <section class="hero-interno">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Nossa Loja</h1>
+      <p>Compre equipamentos e serviços com a qualidade HS Refrigeração</p>
+    </div>
+  </section>
+
+  <!-- Loja -->
+  <section class="loja-page">
+    <div class="container">
+
+      <!-- Filtros -->
+      <div class="filtros">
+        <button class="filtro-btn active" data-filter="all">Todos</button>
+        <button class="filtro-btn" data-filter="produto">Produtos</button>
+        <button class="filtro-btn" data-filter="servico">Serviços</button>
+        <div class="carrinho">
+          🛒 Carrinho (<span id="carrinho-count">0</span>)
+        </div>
+      </div>
+
+      <!-- Grid produtos -->
+      <div class="grid-loja">
+
+        <!-- Produto -->
+        <div class="item produto">
+          <img src="img/ar1.jpg" alt="Ar-condicionado Split 9000 BTUs">
+          <h3>Ar-condicionado Split 9000 BTUs</h3>
+          <p class="preco">R$ 1.799,00</p>
+          <button class="btn add-carrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Produto -->
+        <div class="item produto">
+          <img src="img/ar2.jpg" alt="Ar-condicionado Split 12000 BTUs">
+          <h3>Ar-condicionado Split 12000 BTUs</h3>
+          <p class="preco">R$ 2.199,00</p>
+          <button class="btn add-carrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Serviço -->
+        <div class="item servico">
+          <img src="img/instalacao.jpg" alt="Serviço de Instalação">
+          <h3>Instalação de Ar-condicionado</h3>
+          <p class="preco">R$ 450,00</p>
+          <button class="btn add-carrinho">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Serviço -->
+        <div class="item servico">
+          <img src="img/manutencao.jpg" alt="Serviço de Manutenção Preventiva">
+          <h3>Manutenção Preventiva</h3>
+          <p class="preco">R$ 250,00</p>
+          <button class="btn add-carrinho">Adicionar ao Carrinho</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Finalize sua compra com segurança</h2>
+    <a href="contato.html" class="btn">Ir para Checkout</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 HS Refrigeração - Todos os direitos reservados</p>
+      <p>Desenvolvido por Hecsoni Sanchez</p>
+    </div>
+  </footer>
+  <script src="js/menuHamburguer.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout - HS Refrigeração">
+  <title>Checkout | HS Refrigeração</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/checkout.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="HS Refrigeração">
+      </a>
+       <button class="menu-toggle">☰</button>
+
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="planos.html">Planos</a>
+        <a href="loja.html">Loja</a>
+        <a href="checkout.html" class="active">Checkout</a>
+        <a href="contato.html" class="btn">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-interno">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Checkout</h1>
+      <p>Finalize sua compra com segurança</p>
+    </div>
+  </section>
+
+  <!-- Checkout -->
+  <section class="checkout">
+    <div class="container grid-checkout">
+
+      <!-- Resumo do Carrinho -->
+      <div class="resumo-carrinho">
+        <h2>Seu Carrinho</h2>
+        <ul id="lista-carrinho">
+          <!-- Produtos vão aparecer aqui pelo JS -->
+        </ul>
+        <p class="total">Total: <span id="total-carrinho">R$ 0,00</span></p>
+      </div>
+
+      <!-- Formulário -->
+      <div class="checkout-form">
+        <h2>Dados do Cliente</h2>
+        <form id="form-checkout">
+          <label>Nome Completo</label>
+          <input type="text" required>
+
+          <label>Email</label>
+          <input type="email" required>
+
+          <label>Telefone/WhatsApp</label>
+          <input type="tel" required>
+
+          <label>Endereço</label>
+          <input type="text" required>
+
+          <label>Forma de Pagamento</label>
+          <select required>
+            <option value="">Selecione</option>
+            <option>Pix</option>
+            <option>Cartão de Crédito</option>
+            <option>Boleto</option>
+          </select>
+
+          <button type="submit" class="btn">Finalizar Pedido</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 HS Refrigeração - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script src="js/menuHamburguer.js"></script>
+</body>
+</html>
