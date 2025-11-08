@@ -730,3 +730,127 @@ a {
 @media (max-width: 768px) {
   .grid-mapa { grid-template-columns: 1fr; }
 }
+
+/* Footer profissional */
+.site-footer {
+  background: #0b1620;
+  color: #cfd8dc;
+  margin-top: 40px;
+  border-top: 2px solid #ff8c00;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+.footer-logo img {
+  height: 70px;                 /* puedes subir a 90 si quieres */
+  display: block;
+  margin-bottom: 12px;
+}
+
+.site-footer h4 {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.site-footer p {
+  color: #b0bec5;
+  font-size: 0.95rem;
+}
+
+.site-footer ul {
+  list-style: none;
+}
+
+.site-footer a {
+  color: #e6f0f3;
+}
+
+.site-footer a:hover {
+  color: #ffb566;
+}
+
+.footer-nav ul li,
+.footer-servicos ul li,
+.footer-contato ul li {
+  margin-bottom: 8px;
+}
+
+.footer-contato .btn-mini {
+  display: inline-block;
+  background: #ff8c00;
+  color: #0c1a24;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.footer-contato .btn-mini:hover {
+  background: #e67800;
+  color: #fff;
+}
+
+/* Redes (si agregas iconos) */
+.social {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.social a {
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+}
+
+/* Barra inferior */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: #0a141c;
+  padding: 12px 0;
+  font-size: 0.92rem;
+  color: #a7b5bd;
+}
+.footer-bottom-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.legal-links {
+  display: flex;
+  gap: 14px;
+}
+.byline {
+  margin-left: auto;
+  color: #90a4ae;
+}
+
+/* Responsive footer */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1.6fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 0;
+  }
+  .footer-bottom-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .byline {
+    margin-left: 0;
+  }
+}
