@@ -96,6 +96,7 @@ a {
 }
 .hero .sub {
   font-size: 1rem;
+  margin-bottom: 25px;
   opacity: 0.9;
 }
 
@@ -612,6 +613,7 @@ a {
   align-items: start;
 }
 .onde-estamos .endereco h3 { color: #ff8c00; margin-bottom: 10px; }
+
 
 /* Por que nos escolher */
 .porque { padding: 60px 0; background: #132733; }
