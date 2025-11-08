@@ -37,7 +37,7 @@ a {
   padding: 8px 0;
 }
 .logo img {
-  height: 120px;             /* ajusta a tu gusto: 100–140px */
+  height: 68px;             /* ajusta a tu gusto: 100–140px */
   max-height: 18vh;          /* evita desbordes en pantallas bajas */
   
 }
@@ -531,7 +531,7 @@ a {
 @media (max-width: 768px) {
 
   .logo img {
-    height: 90px;
+    height: 53px;
   }
 
   .menu-toggle {
