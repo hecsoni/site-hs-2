@@ -31,12 +31,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Toggle submenu "Serviços" en mobile
-document.querySelectorAll(".menu-dropdown > a").forEach(link => {
-  link.addEventListener("click", (e) => {
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      e.preventDefault();
-      link.parentElement.classList.toggle("open");
-    }
+// Mobile submenu toggle para "Serviços" sin cerrar el hamburguer
+(function () {
+  const mq = window.matchMedia('(max-width: 768px)');
+  const dropdowns = document.querySelectorAll('.menu-dropdown');
+
+  dropdowns.forEach(dd => {
+    const trigger = dd.querySelector(':scope > a');      // link "Serviços"
+    const submenu = dd.querySelector(':scope > .submenu');
+
+    // Asegura estado inicial
+    dd.classList.remove('open');
+    if (submenu) submenu.style.display = '';
+
+    trigger.addEventListener('click', (e) => {
+      if (mq.matches) {
+        e.preventDefault();              // no navegar a servicos.html en mobile
+        e.stopPropagation();             // no propagar al contenedor del menú
+        // Alterna solo este dropdown, no cierra el menú
+        dd.classList.toggle('open');
+      }
+      // En desktop, deja el comportamiento hover por CSS
+    });
   });
-});
+
+  // Evita que clics dentro del submenu cierren el menú hamburguer
+  document.querySelectorAll('.submenu a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      // aquí sí permitimos la navegación normalmente
+      // no hacemos nada especial, solo evitamos que otros listeners cierren el menú
+      e.stopPropagation();
+    });
+  });
+})();

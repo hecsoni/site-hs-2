@@ -937,6 +937,19 @@ a {
   .menu-dropdown.open .submenu { display: block; }
   /* Permitir abrir/cerrar tocando “Serviços” en mobile */
   .menu-dropdown > a { width: 100%; }
+  
+}
+
+@media (max-width: 768px) {
+  .menu-dropdown .submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .menu-dropdown.open .submenu {
+    max-height: 600px;
+  }
 }
 
 
@@ -1024,5 +1037,124 @@ a {
 @media (max-width: 992px) {
   .product-wrap { grid-template-columns: 1fr; }
   .product-img { height: 260px; }
+  .product-grid { grid-template-columns: 1fr; }
+}
+
+/* Seções tipo produto (inspirado na referência) */
+.section-lite { padding: 18px 0 10px; }
+.section-rich { padding: 26px 0; }
+
+.steps, .benefits, .tech-grid, .includes-grid, .excludes-grid {
+  display: grid;
+  gap: 16px;
+}
+.steps { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.benefits { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.tech-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.includes-grid, .excludes-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+.info-card {
+  background: #0e1b25;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px;
+}
+.info-card h4 { margin: 0 0 6px; font-size: 1rem; }
+.info-card p, .info-card li { color: #b0bec5; font-size: .95rem; }
+
+.icon-bullet {
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.icon-bullet .ic {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  display: grid; place-items: center; font-weight: 700; color: #ffb566;
+}
+
+.notice {
+  background: rgba(255, 140, 0, .08);
+  border: 1px solid rgba(255, 140, 0, .25);
+  color: #ffd9b3;
+  padding: 10px 12px; border-radius: 10px;
+  font-size: .95rem;
+}
+
+.policy-link { display: inline-flex; align-items: center; gap: 8px; }
+.policy-link::before {
+  content: '📄';
+}
+
+.video-embed {
+  position: relative; padding-top: 56.25%;
+  border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);
+}
+.video-embed iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border: 0;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .steps { grid-template-columns: 1fr; }
+  .benefits { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: 1fr 1fr; }
+  .includes-grid, .excludes-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .tech-grid, .includes-grid, .excludes-grid { grid-template-columns: 1fr; }
+}
+
+
+/* Legibilidad general en páginas de produto */
+.product-main article h2, 
+.section-lite h2, 
+.section-rich h2 { margin: 18px 0 10px; }
+.product-main article h3 { margin: 16px 0 8px; }
+.product-main p, 
+.product-main li { color: #cfd8dc; }
+
+/* Lista con iconos */
+.icon-list { display: grid; gap: 8px; margin: 8px 0 14px; }
+.icon-item { display: grid; grid-template-columns: 28px 1fr; align-items: start; gap: 10px; }
+.icon-item .ic {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  display: grid; place-items: center;
+  color: #ffb566; font-weight: 700; font-size: 0.95rem;
+}
+
+/* Variantes de iconos (puedes cambiar por SVG cuando quieras) */
+.ic.especific { content: '⚙'; }
+.ic.include { content: '✔'; }
+.ic.exclude { content: '✖'; }
+.ic.req { content: '⚠'; }
+.ic.faq { content: '❓'; }
+
+/* Info cards ya usadas: mejorar contraste y hover sutil */
+.info-card {
+  background: #0e1b25;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px;
+}
+.info-card:hover { border-color: rgba(255,255,255,0.16); }
+
+/* Grid lateral y bloques */
+.product-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
+.product-aside .box {
+  background: #0e1b25; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 14px; margin-bottom: 14px;
+}
+
+/* Separadores suaves entre secciones largas */
+.section-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 18px 0; }
+
+/* Mejores listas dentro de article para no verse "apelmazadas" */
+.product-main article ul { padding-left: 18px; margin: 6px 0 12px; }
+.product-main details { background: #0e1b25; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; }
+.product-main details summary { cursor: pointer; }
+
+/* Responsivo */
+@media (max-width: 992px) {
   .product-grid { grid-template-columns: 1fr; }
 }
