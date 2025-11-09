@@ -1158,3 +1158,22 @@ a {
 @media (max-width: 992px) {
   .product-grid { grid-template-columns: 1fr; }
 }
+
+
+.servicos .servicos-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;   /* mude para flex-start ou flex-end se preferir */
+}
+
+.btn.ver-todos {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #183242;      /* ajuste às suas cores do tema */
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.btn.ver-todos:hover { filter: brightness(1.2); }
