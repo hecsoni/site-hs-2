@@ -30,3 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target.matches("a")) openMenu(false);
   });
 });
+
+// Toggle submenu "Serviços" en mobile
+document.querySelectorAll(".menu-dropdown > a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("open");
+    }
+  });
+});

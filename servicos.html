@@ -3,87 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conheça todos os serviços oferecidos pela HS Refrigeração em Curitiba: instalação, manutenção, limpeza e PMOC.">
+  <meta name="description" content="Serviços de refrigeração e climatização em Curitiba: ar-condicionado, geladeira, máquina de lavar, refrigeração comercial, máquinas de gelo e câmara fria. Instalação, manutenção e limpeza.">
   <title>Serviços | HS Refrigeração</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
-      <a href="index.html" class="logo">
-        <img src="img/logo.png" alt="HS Refrigeração">
-      </a>
-       <button class="menu-toggle">☰</button>
-
-      <nav class="menu">
-       <a href="index.html">Início</a>
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="HS Refrigeração"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <!-- NAV con submenu (usa el bloque de arriba) -->
+      <nav id="menu-principal" class="menu" role="navigation">
+        <a href="index.html">Início</a>
         <a href="sobre.html">Sobre nós</a>
-        <a href="servicos.html">Serviços</a>
+        <div class="menu-dropdown">
+          <a href="servicos.html" class="active">Serviços</a>
+          <div class="submenu">
+            <a href="servicos-ar-condicionado.html">Ar-condicionado</a>
+            <a href="servicos-geladeira-freezer.html">Geladeira e Freezer</a>
+            <a href="servicos-maquina-lavar.html">Máquina de lavar</a>
+            <a href="servicos-refrigeracao-comercial.html">Refrigeração comercial</a>
+            <a href="servicos-maquinas-gelo.html">Máquinas de gelo</a>
+            <a href="servicos-camara-fria.html">Câmara fria</a>
+          </div>
+        </div>
         <a href="planos.html">Planos</a>
         <a href="loja.html">Loja</a>
         <a href="checkout.html">Checkout</a>
-        <a href="contato.html" class="active btn">Contato</a>
+        <a href="contato.html" class="btn">Contato</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero interno -->
   <section class="hero-interno">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>Nossos Serviços</h1>
-      <p>Soluções completas em refrigeração e climatização</p>
+      <h1>Serviços em Curitiba e região</h1>
+      <p>Instalação, manutenção preventiva e corretiva, limpeza e PMOC</p>
     </div>
   </section>
 
-  <!-- Lista de Serviços -->
   <section class="servicos-page">
     <div class="container">
       <div class="grid-servicos">
-        
-        <div class="servico-card">
-          <img src="img/instalacao.jpg" alt="Instalação de ar-condicionado">
-          <h3>Instalação de Ar-condicionado</h3>
-          <p>Realizamos instalação profissional de equipamentos residenciais, comerciais e industriais com garantia e segurança.</p>
-        </div>
+        <a class="servico-card" href="servicos-ar-condicionado.html" id="ar-condicionado">
+          <img src="img/serv-ar.jpg" alt="Serviços de ar-condicionado em Curitiba">
+          <h3>Ar-condicionado</h3>
+          <p>Instalação, manutenção preventiva e corretiva, higienização e PMOC para sistemas residenciais, comerciais e industriais.</p>
+        </a>
 
-        <div class="servico-card">
-          <img src="img/manutencao.jpg" alt="Manutenção preventiva">
-          <h3>Manutenção Preventiva</h3>
-          <p>Evite problemas futuros e aumente a vida útil dos seus aparelhos com nosso serviço de manutenção preventiva.</p>
-        </div>
+        <a class="servico-card" href="servicos-geladeira-freezer.html" id="geladeira-freezer">
+          <img src="img/serv-geladeira.jpg" alt="Conserto de geladeira e freezer">
+          <h3>Geladeira e Freezer</h3>
+          <p>Diagnóstico, troca de peças, correção de vazamentos e reparos gerais em geladeiras e freezers.</p>
+        </a>
 
-        <div class="servico-card">
-          <img src="img/limpeza.jpg" alt="Limpeza de ar-condicionado">
-          <h3>Limpeza e Higienização</h3>
-          <p>Serviço de limpeza completa que garante melhor qualidade do ar e maior eficiência energética do seu equipamento.</p>
-        </div>
+        <a class="servico-card" href="servicos-maquina-lavar.html" id="maquina-lavar">
+          <img src="img/serv-lavar.jpg" alt="Conserto de máquina de lavar">
+          <h3>Máquina de lavar</h3>
+          <p>Manutenção e reparo em máquinas de lavar de diversas marcas, com peças originais e garantia.</p>
+        </a>
 
-        <div class="servico-card">
-          <img src="img/pmoc.jpg" alt="PMOC">
-          <h3>PMOC</h3>
-          <p>Elaboração e execução do Plano de Manutenção, Operação e Controle, obrigatório para empresas e condomínios.</p>
-        </div>
+        <a class="servico-card" href="servicos-refrigeracao-comercial.html" id="refrigeracao-comercial">
+          <img src="img/serv-comercial.jpg" alt="Refrigeração comercial">
+          <h3>Refrigeração comercial</h3>
+          <p>Instalação e manutenção de balcões, expositores, ilhas, câmaras e sistemas comerciais de refrigeração.</p>
+        </a>
 
+        <a class="servico-card" href="servicos-maquinas-gelo.html" id="maquinas-gelo">
+          <img src="img/serv-gelo.jpg" alt="Máquinas de gelo">
+          <h3>Máquinas de gelo</h3>
+          <p>Limpeza, descalcificação, manutenção e troca de componentes em máquinas de gelo.</p>
+        </a>
+
+        <a class="servico-card" href="servicos-camara-fria.html" id="camara-fria">
+          <img src="img/serv-camara.jpg" alt="Câmara fria">
+          <h3>Câmara fria</h3>
+          <p>Projeto, instalação, isolação, vedação, manutenção e controle de temperatura para câmaras frias.</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta">
     <h2>Precisa de um orçamento personalizado?</h2>
     <a href="contato.html" class="btn">Fale Conosco</a>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 HS Refrigeração - Todos os direitos reservados</p>
-      <p>Desenvolvido por Hecsoni Sanchez</p>
-    </div>
-  </footer>
+  <!-- Footer profesional (el mismo que ya integraste) -->
+  <footer class="site-footer"> ... </footer>
+
+  <script src="js/main.js"></script>
   <script src="js/menuHamburguer.js"></script>
 </body>
 </html>

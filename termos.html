@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Checkout - HS Refrigeração">
-  <title>Checkout | HS Refrigeração</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/checkout.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Termos de Uso - HS Refrigeração</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
-      <a href="index.html" class="logo">
-        <img src="img/logo.png" alt="HS Refrigeração">
-      </a>
-       <button class="menu-toggle">☰</button>
-
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="HS Refrigeração"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
       <nav id="menu-principal" class="menu" role="navigation">
           <a href="index.html">Início</a>
           <a href="sobre.html">Sobre nós</a>
@@ -42,61 +35,45 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero-interno">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Checkout</h1>
-      <p>Finalize sua compra com segurança</p>
+  <main class="legal">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Início</a> / Termos de Uso</div>
+      <h1>Termos de Uso</h1>
+      <p>Última atualização: 08/11/2025</p>
+
+      <h2>1. Aceitação</h2>
+      <p>Ao acessar este site, você concorda com estes Termos de Uso e com nossa <a href="privacidade.html">Política de Privacidade</a>.</p>
+
+      <h2>2. Uso do site</h2>
+      <ul>
+        <li>Utilize o site para fins legais e de acordo com a legislação aplicável.</li>
+        <li>É proibido tentar comprometer a segurança ou disponibilidade do site.</li>
+      </ul>
+
+      <h2>3. Conteúdo e propriedade</h2>
+      <p>Todo conteúdo (textos, imagens, marcas) pertence à HS Refrigeração ou a seus licenciantes e é protegido por leis aplicáveis.</p>
+
+      <h2>4. Orçamentos e serviços</h2>
+      <p>Solicitações de orçamento não constituem proposta vinculante até confirmação formal. Prazos, preços e condições podem variar após avaliação técnica.</p>
+
+      <h2>5. Limitação de responsabilidade</h2>
+      <p>Buscamos manter informações corretas e o site disponível; não garantimos operação ininterrupta ou livre de erros.</p>
+
+      <h2>6. Links de terceiros</h2>
+      <p>Podemos exibir links externos; não nos responsabilizamos por seus conteúdos ou práticas.</p>
+
+      <h2>7. Alterações</h2>
+      <p>Podemos atualizar estes Termos a qualquer momento. A versão vigente é a publicada nesta página.</p>
+
+      <h2>8. Contato</h2>
+      <p>Dúvidas? <a href="mailto:contato@hsrefrigeracao.com">contato@hsrefrigeracao.com</a></p>
     </div>
-  </section>
+  </main>
 
-  <!-- Checkout -->
-  <section class="checkout">
-    <div class="container grid-checkout">
 
-      <!-- Resumo do Carrinho -->
-      <div class="resumo-carrinho">
-        <h2>Seu Carrinho</h2>
-        <ul id="lista-carrinho">
-          <!-- Produtos vão aparecer aqui pelo JS -->
-        </ul>
-        <p class="total">Total: <span id="total-carrinho">R$ 0,00</span></p>
-      </div>
-
-      <!-- Formulário -->
-      <div class="checkout-form">
-        <h2>Dados do Cliente</h2>
-        <form id="form-checkout">
-          <label>Nome Completo</label>
-          <input type="text" required>
-
-          <label>Email</label>
-          <input type="email" required>
-
-          <label>Telefone/WhatsApp</label>
-          <input type="tel" required>
-
-          <label>Endereço</label>
-          <input type="text" required>
-
-          <label>Forma de Pagamento</label>
-          <select required>
-            <option value="">Selecione</option>
-            <option>Pix</option>
-            <option>Cartão de Crédito</option>
-            <option>Boleto</option>
-          </select>
-
-          <button type="submit" class="btn">Finalizar Pedido</button>
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-   <!-- Footer -->
-    <footer class="site-footer">
+  <!-- Footer -->
+    
+  <footer class="site-footer"> 
       <div class="container footer-grid">
         <!-- Columna 1: Marca -->
         <div class="footer-brand">
@@ -190,6 +167,8 @@
       </div>
     </footer>
 
+
+  <script src="js/main.js"></script>
   <script src="js/menuHamburguer.js"></script>
 </body>
 </html>

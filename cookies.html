@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Checkout - HS Refrigeração">
-  <title>Checkout | HS Refrigeração</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/checkout.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Cookies - HS Refrigeração</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
-      <a href="index.html" class="logo">
-        <img src="img/logo.png" alt="HS Refrigeração">
-      </a>
-       <button class="menu-toggle">☰</button>
-
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="HS Refrigeração"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
       <nav id="menu-principal" class="menu" role="navigation">
           <a href="index.html">Início</a>
           <a href="sobre.html">Sobre nós</a>
@@ -42,60 +35,45 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero-interno">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Checkout</h1>
-      <p>Finalize sua compra com segurança</p>
+  <main class="legal">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Início</a> / Política de Cookies</div>
+      <h1>Política de Cookies</h1>
+      <p>Última atualização: 08/11/2025</p>
+
+      <h2>1. O que são cookies</h2>
+      <p>Cookies são pequenos arquivos armazenados no seu dispositivo para lembrar preferências e melhorar sua experiência.</p>
+
+      <h2>2. Como usamos cookies</h2>
+      <ul>
+        <li>Essenciais: funcionalidades básicas do site.</li>
+        <li>Desempenho/Analíticos: entender uso e melhorar conteúdo.</li>
+        <li>Terceiros: serviços integrados (ex.: mapas).</li>
+      </ul>
+
+      <h2>3. Exemplos de cookies</h2>
+      <table class="cookie-table">
+        <thead>
+          <tr><th>Nome</th><th>Tipo</th><th>Finalidade</th><th>Duração</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>session_id</td><td>Essencial</td><td>Manter a sessão do usuário</td><td>Durante a sessão</td></tr>
+          <tr><td>_ga</td><td>Analítico</td><td>Medição de uso (Google Analytics)</td><td>24 meses</td></tr>
+        </tbody>
+      </table>
+
+      <h2>4. Controle de cookies</h2>
+      <p>Gerencie cookies nas configurações do navegador. Bloquear alguns cookies pode afetar o funcionamento do site.</p>
+
+      <h2>5. Alterações</h2>
+      <p>Podemos atualizar esta Política periodicamente. Consulte esta página para a versão mais recente.</p>
+
+      <h2>6. Contato</h2>
+      <p>Dúvidas? <a href="mailto:contato@hsrefrigeracao.com">contato@hsrefrigeracao.com</a></p>
     </div>
-  </section>
+  </main>
 
-  <!-- Checkout -->
-  <section class="checkout">
-    <div class="container grid-checkout">
-
-      <!-- Resumo do Carrinho -->
-      <div class="resumo-carrinho">
-        <h2>Seu Carrinho</h2>
-        <ul id="lista-carrinho">
-          <!-- Produtos vão aparecer aqui pelo JS -->
-        </ul>
-        <p class="total">Total: <span id="total-carrinho">R$ 0,00</span></p>
-      </div>
-
-      <!-- Formulário -->
-      <div class="checkout-form">
-        <h2>Dados do Cliente</h2>
-        <form id="form-checkout">
-          <label>Nome Completo</label>
-          <input type="text" required>
-
-          <label>Email</label>
-          <input type="email" required>
-
-          <label>Telefone/WhatsApp</label>
-          <input type="tel" required>
-
-          <label>Endereço</label>
-          <input type="text" required>
-
-          <label>Forma de Pagamento</label>
-          <select required>
-            <option value="">Selecione</option>
-            <option>Pix</option>
-            <option>Cartão de Crédito</option>
-            <option>Boleto</option>
-          </select>
-
-          <button type="submit" class="btn">Finalizar Pedido</button>
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-   <!-- Footer -->
+  <!-- Footer -->
     <footer class="site-footer">
       <div class="container footer-grid">
         <!-- Columna 1: Marca -->
@@ -190,6 +168,7 @@
       </div>
     </footer>
 
+  <script src="js/main.js"></script>
   <script src="js/menuHamburguer.js"></script>
 </body>
 </html>
