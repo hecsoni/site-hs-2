@@ -1184,3 +1184,37 @@ a {
   border: 1px solid rgba(255,255,255,0.08);
 }
 .btn.ver-todos:hover { filter: brightness(1.2); }
+
+.under-construction {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+  text-align: center;
+  background: #0e1b25;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin: 24px auto;
+  max-width: 940px;
+}
+.uc-wrap { max-width: 620px; }
+.uc-icon { font-size: 48px; margin-bottom: 10px; }
+.under-construction h1 { margin: 6px 0 6px; }
+.under-construction p { color: #cfd8dc; margin-bottom: 16px; }
+
+.uc-actions {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.under-construction .btn {
+  display: inline-block; padding: 10px 16px; border-radius: 10px;
+  background: #ff7f32; color: #0b1620; font-weight: 700; text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.under-construction .btn:hover { filter: brightness(1.05); }
+.under-construction .btn-sec {
+  display: inline-block; padding: 10px 16px; border-radius: 10px;
+  background: transparent; color: #ffb566; text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.under-construction .btn-sec:hover { background: rgba(255,255,255,0.06); }
+.uc-note { display: block; opacity: 0.8; margin-top: 8px; }
