@@ -55,14 +55,14 @@ a {
 
 
 .btn {
-  background: #ff8c00;
-  padding: 10px 20px;
-  border-radius: 5px;
+  background: #25D366;
+  padding: 20px 20px;
+  border-radius: 8px;
   color: #fff;
   transition: 0.3s;
 }
 .btn:hover {
-  background: #e67800;
+  background: #075E54;
 }
 
 /* Hero */
