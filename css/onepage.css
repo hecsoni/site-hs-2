@@ -273,3 +273,46 @@ h1, h2, h3, h4 { line-height: 1.2; }
   .hero-ctas { flex-direction: column; }
   .btn-primary, .btn-secondary { width: 100%; text-align: center; }
 }
+
+/* Instalação - observação do preço (mão de obra) */
+.preco-obs{
+  font-size: .9rem;
+  color: #aaa;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* Box "não incluso" */
+.nao-inclui{
+  background: rgba(255, 140, 0, 0.10);
+  border-left: 4px solid #ff8c00;
+  padding: 25px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+.nao-inclui h3{
+  color: #ff8c00;
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.nao-inclui ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nao-inclui ul li{
+  padding: 8px 0;
+  font-size: .95rem;
+  color: #ddd;
+}
+
+.nao-inclui-obs{
+  margin-top: 12px;
+  font-size: .9rem;
+  color: #bbb;
+  font-style: italic;
+}
