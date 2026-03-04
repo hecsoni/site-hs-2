@@ -15,52 +15,47 @@
       gtag("config", "AW-11393873816");
     </script>
 
-    <!-- Funciones de conversión para WhatsApp y Llamadas -->
+    <!-- Conversion tracking: WhatsApp + Llamada -->
     <script>
-      function gtag_report_conversion_whatsapp(url) {
-        var callback = function () {
-          if (typeof url !== 'undefined') {
-            window.open(url, '_blank');
-          }
-        };
+      // Reemplaza SOLO si algún día cambias el send_to en Google Ads
+      const ADS_SEND_TO_WHATSAPP = "AW-11393873816/ZMoqCJG-sO8bEJjvgrkq";
+      const ADS_SEND_TO_CALL = "AW-11393873816/ZMoqCJG-sO8bEJjvgrkq"; // si tuvieras otra conversión de llamadas, pon aquí su send_to
 
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-11393873816/ZMoqCJG-sO8bEJjvgrkq',
-            'value': 1.0,
-            'currency': 'BRL',
-            'event_callback': callback
-          });
+      function track_conversion_and_open(url, sendTo) {
+        const openTarget =
+          url && url.startsWith("https://wa.me/") ? "_blank" : "_self";
 
-          setTimeout(callback, 800);
-          return false;
-        } else {
-          callback();
-          return false;
-        }
-      }
-
-      function gtag_report_conversion_call(url) {
-        var callback = function () {
-          if (typeof url !== 'undefined') {
+        const callback = function () {
+          if (!url) return;
+          if (openTarget === "_blank") {
+            window.open(url, "_blank", "noopener,noreferrer");
+          } else {
             window.location.href = url;
           }
         };
 
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-11393873816/ZMoqCJG-sO8bEJjvgrkq',
-            'value': 1.0,
-            'currency': 'BRL',
-            'event_callback': callback
-          });
-
-          setTimeout(callback, 800);
-          return false;
-        } else {
+        // Si gtag no está listo, igual abrimos el link
+        if (typeof window.gtag !== "function") {
           callback();
           return false;
         }
+
+        window.gtag("event", "conversion", {
+          send_to: sendTo,
+          event_callback: callback,
+        });
+
+        // Fallback por si el callback no dispara (bloqueadores / latencia)
+        setTimeout(callback, 800);
+        return false;
+      }
+
+      function gtag_report_conversion_whatsapp(url) {
+        return track_conversion_and_open(url, ADS_SEND_TO_WHATSAPP);
+      }
+
+      function gtag_report_conversion_call(url) {
+        return track_conversion_and_open(url, ADS_SEND_TO_CALL);
       }
     </script>
 
@@ -78,23 +73,9 @@
       Conserto e Higienização Hoje no Xaxim e Curitiba | HS Refrigeração
     </title>
     <link rel="stylesheet" href="css/onepage.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/favicon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="img/favicon.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="img/favicon.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.png" />
   </head>
   <body>
     <!-- Header Sticky solo en móvil -->
@@ -103,7 +84,13 @@
         <a href="#hero" class="logo">
           <img src="img/logo.png" alt="HS Refrigeração" />
         </a>
-        <a href="tel:+5541992072920" class="btn-ligar-sticky" onclick="return gtag_report_conversion_call(this.href);"> Ligar Agora </a>
+        <a
+          href="tel:+5541992072920"
+          class="btn-ligar-sticky"
+          onclick="return gtag_report_conversion_call(this.href);"
+        >
+          Ligar Agora
+        </a>
       </div>
     </header>
 
@@ -121,6 +108,7 @@
               href="https://wa.me/5541992072920?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20no%20Google%20e%20preciso%20de%20um%20or%C3%A7amento"
               class="btn-whatsapp-hero"
               onclick="return gtag_report_conversion_whatsapp(this.href);"
+              target="_blank"
               rel="noopener"
             >
               <svg
@@ -134,7 +122,10 @@
               </svg>
               Chamar no WhatsApp Agora
             </a>
-            <a href="tel:+5541992072920" class="btn-secondary" onclick="return gtag_report_conversion_call(this.href);"
+            <a
+              href="tel:+5541992072920"
+              class="btn-secondary"
+              onclick="return gtag_report_conversion_call(this.href);"
               >Falar com Técnico</a
             >
           </div>
@@ -186,6 +177,7 @@
           href="https://wa.me/5541992072920?text=Ol%C3%A1%2C%20preciso%20de%20or%C3%A7amento%20para%20AR-CONDICIONADO"
           class="btn-service"
           onclick="return gtag_report_conversion_whatsapp(this.href);"
+          target="_blank"
           rel="noopener"
           data-aos="zoom-in"
         >
@@ -213,6 +205,7 @@
           href="https://wa.me/5541992072920?text=Ol%C3%A1%2C%20preciso%20de%20or%C3%A7amento%20para%20LAVADORA"
           class="btn-service"
           onclick="return gtag_report_conversion_whatsapp(this.href);"
+          target="_blank"
           rel="noopener"
           data-aos="zoom-in"
         >
@@ -240,6 +233,7 @@
           href="https://wa.me/5541992072920?text=Ol%C3%A1%2C%20preciso%20de%20or%C3%A7amento%20para%20GELADEIRA"
           class="btn-service"
           onclick="return gtag_report_conversion_whatsapp(this.href);"
+          target="_blank"
           rel="noopener"
           data-aos="zoom-in"
         >
@@ -267,6 +261,7 @@
           href="https://wa.me/5541992072920?text=Ol%C3%A1%2C%20preciso%20de%20or%C3%A7amento%20para%20REFRIGERA%C3%87%C3%83O%20COMERCIAL"
           class="btn-service"
           onclick="return gtag_report_conversion_whatsapp(this.href);"
+          target="_blank"
           rel="noopener"
           data-aos="zoom-in"
         >
@@ -301,6 +296,7 @@
               href="https://wa.me/5541992072920?text=Quero%20contratar%20o%20Plano%20B%C3%A1sico%20de%20Ar-condicionado%20(R%24%20200)"
               class="btn-plano"
               onclick="return gtag_report_conversion_whatsapp(this.href);"
+              target="_blank"
               rel="noopener"
               >Contratar</a
             >
@@ -326,6 +322,7 @@
               href="https://wa.me/5541992072920?text=Quero%20contratar%20o%20Plano%20Intermedi%C3%A1rio%20de%20Ar-condicionado%20(R%24%20260)"
               class="btn-plano"
               onclick="return gtag_report_conversion_whatsapp(this.href);"
+              target="_blank"
               rel="noopener"
               >Contratar</a
             >
@@ -346,6 +343,7 @@
               href="https://wa.me/5541992072920?text=Quero%20contratar%20o%20Plano%20Premium%20de%20Ar-condicionado%20(R%24%20320)"
               class="btn-plano"
               onclick="return gtag_report_conversion_whatsapp(this.href);"
+              target="_blank"
               rel="noopener"
               >Contratar</a
             >
@@ -369,6 +367,7 @@
               href="https://wa.me/5541992072920?text=Quero%20um%20or%C3%A7amento%20para%20Plano%20Empresarial%20de%20Ar-condicionado"
               class="btn-plano"
               onclick="return gtag_report_conversion_whatsapp(this.href);"
+              target="_blank"
               rel="noopener"
               >Solicitar orçamento</a
             >
@@ -402,6 +401,7 @@
               href="https://wa.me/5541992072920?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20INSTALA%C3%87%C3%83O%20Split%207k-12k%20BTU.%20Pode%20me%20passar%20o%20valor%20total%20com%20material%3F"
               class="btn-plano"
               onclick="return gtag_report_conversion_whatsapp(this.href);"
+              target="_blank"
               rel="noopener"
               >Solicitar orçamento</a
             >
@@ -422,6 +422,7 @@
               href="https://wa.me/5541992072920?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20INSTALA%C3%87%C3%83O%20Split%2018k-24k%20BTU.%20Pode%20me%20passar%20o%20valor%20total%20com%20material%3F"
               class="btn-plano"
               onclick="return gtag_report_conversion_whatsapp(this.href);"
+              target="_blank"
               rel="noopener"
               >Solicitar orçamento</a
             >
@@ -442,6 +443,7 @@
               href="https://wa.me/5541992072920?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20INSTALA%C3%87%C3%83O%20Split%2030k%20BTU%20ou%20mais.%20Pode%20me%20passar%20o%20valor%20total%20com%20material%3F"
               class="btn-plano"
               onclick="return gtag_report_conversion_whatsapp(this.href);"
+              target="_blank"
               rel="noopener"
               >Solicitar orçamento</a
             >
@@ -576,6 +578,7 @@
       href="https://wa.me/5541992072920?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20e%20preciso%20de%20um%20or%C3%A7amento"
       class="whatsapp-float"
       onclick="return gtag_report_conversion_whatsapp(this.href);"
+      target="_blank"
       rel="noopener"
       aria-label="WhatsApp"
     >
