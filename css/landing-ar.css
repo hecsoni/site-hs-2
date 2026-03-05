@@ -1,0 +1,91 @@
+/* Estilos específicos para a Landing de Ar */
+.hero-ar {
+  padding: 120px 0 60px;
+  background: linear-gradient(180deg, #0e1b25 0%, #162a3a 100%);
+  color: white;
+}
+
+.badge-local {
+  background: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 15px;
+  border: 1px solid #28a745;
+}
+
+.hero-ar h1 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.btn-whatsapp-main {
+  background: #25d366;
+  color: white;
+  padding: 20px 35px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.btn-whatsapp-main:hover {
+  transform: scale(1.03);
+  background: #128c7e;
+}
+
+.cta-note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.hero-media img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  margin-top: 30px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #ff7f32;
+}
+
+.grid-servicos-ar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card-servico {
+  background: #03172b;
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 5px solid #ff7f32;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero-ar {
+    padding-top: 100px;
+    text-align: center;
+  }
+  .hero-ar h1 {
+    font-size: 2rem;
+  }
+  .btn-whatsapp-main {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+}
