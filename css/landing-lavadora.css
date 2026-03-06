@@ -1,0 +1,327 @@
+/* Estilos específicos para a Landing de Lavadoras */
+:root {
+  --primary-lavadora: #25d366;
+  --blue-clean: #1e88e5;
+  --light-blue: #e3f2fd;
+  --dark-text: #1a237e;
+}
+
+/* --- HERO SECTION --- */
+.hero-lavadora {
+  padding: 140px 0 80px;
+  background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+  color: white;
+}
+
+.badge-local {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  display: inline-block;
+  margin-bottom: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-lavadora h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-lavadora .hero-sub {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.btn-whatsapp-lavadora {
+  background: var(--primary-lavadora);
+  color: white;
+  padding: 22px 40px;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-whatsapp-lavadora:hover {
+  transform: translateY(-3px);
+  background: #128c7e;
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+}
+
+.cta-note {
+  color: #b3e5fc;
+  font-weight: 700;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.hero-media img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+}
+
+/* --- TRUST BAR --- */
+.trust-bar {
+  background: #f5f5f5;
+  padding: 30px 0;
+}
+
+.grid-trust {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #333;
+}
+
+.trust-item span {
+  font-size: 1.8rem;
+}
+
+/* --- SECCIÓN PROBLEMAS --- */
+.problemas-comuns {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.section-title {
+  color: var(--dark-text) !important;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.grid-problemas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.item-problema {
+  background: #f8f9fa;
+  padding: 40px 20px;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.item-problema:hover {
+  transform: translateY(-10px);
+  border-color: var(--blue-clean);
+  box-shadow: 0 15px 30px rgba(30, 136, 229, 0.15);
+}
+
+.item-problema .icon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.item-problema p {
+  color: #333 !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.cta-meio {
+  text-align: center;
+}
+
+.btn-secundario {
+  display: inline-block;
+  padding: 18px 35px;
+  background: var(--blue-clean);
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 8px 20px rgba(30, 136, 229, 0.3);
+}
+
+.btn-secundario:hover {
+  background: #ff7f32;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(255, 127, 50, 0.4);
+}
+
+/* --- SECCIÓN SERVICIOS --- */
+.servicos-lavadora {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  color: white;
+}
+
+.section-title-white {
+  color: white !important;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.grid-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card-servico-lavadora {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.card-servico-lavadora:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.servico-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.card-servico-lavadora h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.card-servico-lavadora p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* --- MARCAS --- */
+.marcas {
+  background: #f1f3f5;
+  padding: 30px 0;
+}
+
+.marcas-texto {
+  text-align: center;
+  color: #495057 !important;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* --- FOOTER --- */
+.footer-lp {
+  background: #1a237e;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-phone {
+  display: inline-block;
+  margin-top: 15px;
+  color: #25d366;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* --- BOTÓN FLOTANTE WHATSAPP --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+  animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  animation: none;
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* --- RESPONSIVE MÓVIL --- */
+@media (max-width: 768px) {
+  .hero-lavadora {
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .hero-lavadora h1 {
+    font-size: 2rem;
+  }
+
+  .btn-whatsapp-lavadora {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 18px 25px;
+  }
+
+  .grid-trust {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-title,
+  .section-title-white {
+    font-size: 1.8rem;
+  }
+}

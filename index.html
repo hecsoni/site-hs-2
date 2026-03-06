@@ -1,63 +1,9 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-11393873816"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "AW-11393873816");
-    </script>
+   
 
-    <!-- Conversion tracking: WhatsApp + Llamada -->
-    <script>
-      // Reemplaza SOLO si algún día cambias el send_to en Google Ads
-      const ADS_SEND_TO_WHATSAPP = "AW-11393873816/GHf7CKPo9oIEUjvgrkq";
-      const ADS_SEND_TO_CALL = "AW-11393873816/GHf7CKPo9oIEUjvgrkq"; // si tuvieras otra conversión de llamadas, pon aquí su send_to
-
-      function track_conversion_and_open(url, sendTo) {
-        const openTarget =
-          url && url.startsWith("https://wa.me/") ? "_blank" : "_self";
-
-        const callback = function () {
-          if (!url) return;
-          if (openTarget === "_blank") {
-            window.open(url, "_blank", "noopener,noreferrer");
-          } else {
-            window.location.href = url;
-          }
-        };
-
-        // Si gtag no está listo, igual abrimos el link
-        if (typeof window.gtag !== "function") {
-          callback();
-          return false;
-        }
-
-        window.gtag("event", "conversion", {
-          send_to: sendTo,
-          event_callback: callback,
-        });
-
-        // Fallback por si el callback no dispara (bloqueadores / latencia)
-        setTimeout(callback, 800);
-        return false;
-      }
-
-      function gtag_report_conversion_whatsapp(url) {
-        return track_conversion_and_open(url, ADS_SEND_TO_WHATSAPP);
-      }
-
-      function gtag_report_conversion_call(url) {
-        return track_conversion_and_open(url, ADS_SEND_TO_CALL);
-      }
-    </script>
+   
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
