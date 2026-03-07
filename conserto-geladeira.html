@@ -1,6 +1,35 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <!-- Global site tag (gtag.js) - Google Ads -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-11393873816"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-11393873816");
+    </script>
+
+    <!-- Função de conversão -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-11393873816/IQkzCLOf94McEJjvgrkq",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -20,7 +49,16 @@
           <img src="img/logo.png" alt="HS Refrigeração" />
         </a>
         <div class="header-actions">
-          <a href="tel:+5541992072920" class="btn-ligar-sticky">Ligar Agora</a>
+          <a
+            href="#"
+            onclick="
+              return gtag_report_conversion(
+                'https://wa.me/5541992072920?text=Olá,+vi+seu+anúncio+e+quero+um+orçamento+de+refrigeração+em+Curitiba.',
+              );
+            "
+            class="btn-ligar-sticky"
+            >Ligar Agora</a
+          >
         </div>
       </div>
     </header>
@@ -40,7 +78,12 @@
           </p>
           <div class="hero-ctas">
             <a
-              href="https://wa.me/5541992072920?text=Olá, vi seu anúncio no Google e preciso de um técnico URGENTE para minha GELADEIRA"
+              href="#"
+              onclick="
+                return gtag_report_conversion(
+                  'https://wa.me/5541992072920?text=Olá,+vi+seu+anúncio+e+quero+um+orçamento+de+refrigeração+em+Curitiba.',
+                );
+              "
               class="btn-whatsapp-geladeira"
             >
               Chamar Técnico no WhatsApp
@@ -93,7 +136,14 @@
           </div>
         </div>
         <div class="cta-meio">
-          <a href="https://wa.me/5541992072920" class="btn-secundario"
+          <a
+            href="#"
+            onclick="
+              return gtag_report_conversion(
+                'https://wa.me/5541992072920?text=Olá,+vi+seu+anúncio+e+quero+um+orçamento+de+refrigeração+em+Curitiba.',
+              );
+            "
+            class="btn-secundario"
             >Solicitar Diagnóstico Técnico Agora</a
           >
         </div>
@@ -115,12 +165,29 @@
       <div class="container">
         <p><strong>HS Refrigeração</strong> - Especialistas em Geladeiras</p>
         <p>Atendemos Xaxim, Boqueirão, Pinheirinho e toda Curitiba.</p>
-        <a href="tel:+5541992072920" class="footer-phone">📞 (41) 99207-2920</a>
+        <a
+          href="#"
+          onclick="
+            return gtag_report_conversion(
+              'https://wa.me/5541992072920?text=Olá,+vi+seu+anúncio+e+quero+um+orçamento+de+refrigeração+em+Curitiba.',
+            );
+          "
+          class="footer-phone"
+          >📞 (41) 99207-2920</a
+        >
       </div>
     </footer>
 
     <!-- Botão Flutuante WhatsApp -->
-    <a href="https://wa.me/5541992072920" class="whatsapp-float">
+    <a
+      href="#"
+      onclick="
+        return gtag_report_conversion(
+          'https://wa.me/5541992072920?text=Olá,+vi+seu+anúncio+e+quero+um+orçamento+de+refrigeração+em+Curitiba.',
+        );
+      "
+      class="whatsapp-float"
+    >
       <img src="img/whatsapp-icon.png" alt="WhatsApp" />
     </a>
   </body>
