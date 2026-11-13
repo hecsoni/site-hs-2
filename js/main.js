@@ -1,73 +1,234 @@
-// Carousel simples
-const track = document.querySelector(".carousel-track");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-let index = 0;
+"use strict";
 
-function showSlide(i) {
-  const slides = document.querySelectorAll(".testimonial");
-  if (i >= slides.length) index = 0;
-  if (i < 0) index = slides.length - 1;
-  track.style.transform = `translateX(${-index * 100}%)`;
+/*
+  IMPORTANTE:
+
+  Coloque aqui o número do WhatsApp da empresa.
+
+  Use somente números:
+  código do país + DDD + número.
+
+  Exemplo de formato:
+  55 + DDD + número
+
+  Não utilize espaços, parênteses, traços ou sinal de +.
+*/
+
+const NUMERO_WHATSAPP = "5541992072920";
+
+/*
+  Mensagens utilizadas pelos botões.
+*/
+
+const MENSAGEM_PADRAO =
+  "Olá! Gostaria de solicitar um atendimento.";
+
+const MENSAGEM_PLANO =
+  "Olá! Gostaria de saber mais sobre os planos mensais de manutenção.";
+
+/*
+  Elementos do menu.
+*/
+
+const menuToggle = document.querySelector(".menu-toggle");
+const menuPrincipal = document.querySelector("#menu-principal");
+
+/*
+  Elementos do formulário.
+*/
+
+const formulario = document.querySelector("#contact-form");
+const campoNome = document.querySelector("#name");
+const campoTelefone = document.querySelector("#phone");
+const servicoSelecionadoTexto = document.querySelector("#selected-service");
+const feedbackFormulario = document.querySelector("#form-feedback");
+
+let servicoSelecionado = "";
+
+/*
+  Verifica se o número foi configurado.
+*/
+
+function numeroConfigurado() {
+  return /^\d+$/.test(NUMERO_WHATSAPP);
 }
 
-nextBtn.addEventListener("click", () => {
-  index++;
-  showSlide(index);
-});
-prevBtn.addEventListener("click", () => {
-  index--;
-  showSlide(index);
-});
+/*
+  Cria o link do WhatsApp com a mensagem codificada.
+*/
 
-// FAQ accordion
-(() => {
-  const items = document.querySelectorAll(".faq-item");
-  items.forEach((item) => {
-    const btn = item.querySelector(".faq-pergunta");
-    const resp = item.querySelector(".faq-resposta");
-    if (!btn || !resp) return;
-    btn.addEventListener("click", () => {
-      const open = item.classList.toggle("open");
-      btn.setAttribute("aria-expanded", String(open));
-    });
+function criarLinkWhatsApp(mensagem) {
+  return `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+}
+
+/*
+  Exibe uma mensagem quando o número ainda não foi configurado.
+*/
+
+function avisarNumeroNaoConfigurado() {
+  feedbackFormulario.textContent =
+    "Configure o número do WhatsApp no arquivo script.js para ativar o contato.";
+
+  document.querySelector("#contato").scrollIntoView({
+    behavior: "smooth"
   });
-})();
+}
 
-// Portfólio simples (slider de imagens)
-(() => {
-  const track = document.querySelector(".portfolio-track");
-  const prev = document.querySelector(".pf-prev");
-  const next = document.querySelector(".pf-next");
-  if (!track || !prev || !next) return;
+/*
+  Abre o WhatsApp em uma nova aba.
+*/
 
-  const slides = Array.from(track.querySelectorAll("img"));
-  let idx = 0;
-
-  function go(i) {
-    if (i >= slides.length) idx = 0;
-    else if (i < 0) idx = slides.length - 1;
-    else idx = i;
-    track.style.transform = `translateX(${-idx * 100}%)`;
+function abrirWhatsApp(mensagem) {
+  if (!numeroConfigurado()) {
+    avisarNumeroNaoConfigurado();
+    return;
   }
 
-  next.addEventListener("click", () => go(idx + 1));
-  prev.addEventListener("click", () => go(idx - 1));
+  feedbackFormulario.textContent = "";
 
-  // Swipe básico em mobile
-  let startX = 0,
-    swiping = false;
-  track.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-    swiping = true;
-  });
-  track.addEventListener("touchmove", (e) => {
-    if (!swiping) return;
-    const dx = e.touches[0].clientX - startX;
-    if (Math.abs(dx) > 50) {
-      swiping = false;
-      go(idx + (dx < 0 ? 1 : -1));
+  window.open(
+    criarLinkWhatsApp(mensagem),
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
+
+/*
+  Atualiza os links dos botões principais.
+*/
+
+function configurarLinksWhatsApp() {
+  const links = document.querySelectorAll(".js-whatsapp");
+
+  links.forEach((link) => {
+    if (numeroConfigurado()) {
+      link.href = criarLinkWhatsApp(MENSAGEM_PADRAO);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    } else {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        avisarNumeroNaoConfigurado();
+      });
     }
   });
-  track.addEventListener("touchend", () => (swiping = false));
-})();
+}
+
+/*
+  Abre e fecha o menu mobile.
+*/
+
+function fecharMenu() {
+  menuPrincipal.classList.remove("is-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Abrir menu");
+}
+
+menuToggle.addEventListener("click", () => {
+  const menuEstaAberto =
+    menuToggle.getAttribute("aria-expanded") === "true";
+
+  if (menuEstaAberto) {
+    fecharMenu();
+    return;
+  }
+
+  menuPrincipal.classList.add("is-open");
+  menuToggle.setAttribute("aria-expanded", "true");
+  menuToggle.setAttribute("aria-label", "Fechar menu");
+});
+
+/*
+  Fecha o menu ao clicar em uma opção.
+*/
+
+menuPrincipal.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", fecharMenu);
+});
+
+/*
+  Fecha o menu ao pressionar Escape.
+*/
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    menuToggle.getAttribute("aria-expanded") === "true"
+  ) {
+    fecharMenu();
+    menuToggle.focus();
+  }
+});
+
+/*
+  Ao selecionar um serviço, registra o interesse
+  para incluir na mensagem do formulário.
+*/
+
+document.querySelectorAll(".js-service").forEach((card) => {
+  card.addEventListener("click", () => {
+    servicoSelecionado = card.dataset.service || "";
+
+    if (servicoSelecionado) {
+      servicoSelecionadoTexto.textContent =
+        `Serviço selecionado: ${servicoSelecionado}`;
+
+      servicoSelecionadoTexto.hidden = false;
+    }
+  });
+});
+
+/*
+  Botão dos planos mensais.
+*/
+
+document.querySelector(".js-plan").addEventListener("click", (event) => {
+  if (!numeroConfigurado()) {
+    event.preventDefault();
+    avisarNumeroNaoConfigurado();
+    return;
+  }
+
+  event.preventDefault();
+  abrirWhatsApp(MENSAGEM_PLANO);
+});
+
+/*
+  Envia os dados do formulário para o WhatsApp.
+
+  Observação:
+  O formulário não armazena dados em servidor.
+  Ele abre o WhatsApp com uma mensagem preenchida.
+*/
+
+formulario.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const nome = campoNome.value.trim();
+  const telefone = campoTelefone.value.trim();
+
+  if (!nome || !telefone) {
+    feedbackFormulario.textContent =
+      "Preencha seu nome e seu WhatsApp para continuar.";
+    return;
+  }
+
+  const linhasMensagem = [
+    "Olá! Gostaria de solicitar um atendimento.",
+    "",
+    `Nome: ${nome}`,
+    `WhatsApp: ${telefone}`
+  ];
+
+  if (servicoSelecionado) {
+    linhasMensagem.push(`Serviço: ${servicoSelecionado}`);
+  }
+
+  abrirWhatsApp(linhasMensagem.join("\n"));
+});
+
+/*
+  Inicialização.
+*/
+
+configurarLinksWhatsApp();
